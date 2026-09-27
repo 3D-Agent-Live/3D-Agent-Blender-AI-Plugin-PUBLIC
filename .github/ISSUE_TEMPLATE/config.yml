@@ -1,0 +1,12 @@
+# Blank issues are off: this repository holds documentation only, not the 3D-Agent app.
+blank_issues_enabled: false
+contact_links:
+  - name: Get help with the 3D-Agent app (Discord ticket)
+    url: https://discord.gg/NxKFCvHQpg
+    about: Setup, Blender, chats, bugs, account and billing. Open a ticket in the 3D-Agent Discord. Never post your connection token.
+  - name: Documentation
+    url: https://3d-agent.com/docs
+    about: Guides, troubleshooting and the full External agents setup.
+  - name: Refunds, account or data deletion
+    url: https://3d-agent.com/docs/get-help
+    about: These go by email to support@3d-agent.com; see Get help.

@@ -1,0 +1,20 @@
+# Connect Codex (CLI, IDE extension) and the ChatGPT desktop app to 3D-Agent (https://3d-agent.com).
+# Source: https://3d-agent.com/docs/external-agents#codex-and-the-chatgpt-app (copied 2026-09-25)
+#
+# Add this block to your Codex config file:
+#   macOS:   ~/.codex/config.toml
+#   Windows: %USERPROFILE%\.codex\config.toml
+#   If you set CODEX_HOME, it's config.toml in that folder.
+#
+# Replace <port> and <token> with the values in 3D-Agent
+# Settings -> External agents -> Advanced (3D-Agent Ultra plan).
+# Codex stops a tool call after 60 seconds unless you raise tool_timeout_sec;
+# 3D-Agent tasks can take up to 15 minutes, so keep the tool_timeout_sec line.
+# Don't use `codex mcp add` for this: it only reads a token from an
+# environment variable, not a header you type in.
+# Check with `codex mcp list`, or /mcp in Codex. Quit and reopen the ChatGPT app if it's running.
+
+[mcp_servers."3d-agent"]
+url = "http://127.0.0.1:<port>/mcp"
+http_headers = { Authorization = "Bearer <token>" }
+tool_timeout_sec = 960
