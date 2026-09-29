@@ -1,0 +1,23 @@
+name: Documentation correction
+description: Report an error in this repository's README, MCP client configs or example prompts. For app problems, use Discord.
+labels: ["docs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository contains documentation only. It does not contain the 3D-Agent app's source code.
+        For help with the app, open a ticket in the [3D-Agent Discord](https://discord.gg/NxKFCvHQpg).
+        **Never paste your connection token.** Anyone with it can spend your prompts.
+  - type: input
+    id: file
+    attributes:
+      label: File
+      description: Which file is wrong? For example mcp-clients/codex-config.toml
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong, and what should it say?
+    validations:
+      required: true
