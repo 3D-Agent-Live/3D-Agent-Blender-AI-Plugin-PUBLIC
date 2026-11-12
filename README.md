@@ -124,7 +124,7 @@ The connected app sees one tool, `3d_agent`, with one required field, `task`. Ea
 - The 3D-Agent app has to be open, signed in and connected to Blender.
 - 3D-Agent runs one task at a time. A second task sent while one is running is refused; send it again when the first has finished.
 - A call stays open until the task finishes, for up to 15 minutes.
-- Each task uses one of your plan's prompts. Tasks that are refused don't use a prompt.
+- Each task uses one of your plan's prompts. Tasks refused because you're not on Ultra don't use a prompt.
 
 Source: [External agents: limits](https://3d-agent.com/docs/external-agents).
 
