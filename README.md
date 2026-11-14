@@ -4,7 +4,21 @@
 
 This repository holds public documentation for 3D-Agent: ready-to-copy MCP configurations for using 3D-Agent from Claude Code, Cursor, Codex and Claude Desktop, and example prompts. It does not contain the 3D-Agent app's source code. The full documentation is at [3d-agent.com/docs](https://3d-agent.com/docs).
 
-_Updated: 2026-09-25_
+_Updated: 2026-11-14_
+
+## Using Claude Code, Cursor or Codex with Blender through MCP
+
+There are two ways to let an AI assistant work in Blender through the Model Context Protocol (MCP).
+
+| | A Blender MCP server | 3D-Agent's MCP server |
+| --- | --- | --- |
+| Examples | Blender's official [Blender Lab MCP Server](https://www.blender.org/lab/mcp-server/), which Claude's Blender connector also uses | 3D-Agent (documented in this repository) |
+| What the assistant gets | Tools to inspect the scene, take screenshots and run Blender Python. The assistant writes the Python itself | One tool, `3d_agent`, that hands a whole task to 3D-Agent |
+| Who does the 3D work | Your assistant and its model | 3D-Agent's own agent, with its own tools, checkpoints and step limits |
+| Cost | The server is free; you bring the assistant and its model | Paid: needs the 3D-Agent Ultra plan, and each task uses one prompt |
+| Setup | Install the server and a Blender add-on, then configure your client | Turn on **Allow connections** in the 3D-Agent app and click **Set up** |
+
+A fuller comparison of the Blender MCP options, with each fact linked to its source, is at [3d-agent.com/blender-mcp](https://3d-agent.com/blender-mcp). The steps and ready-to-copy configurations for 3D-Agent are [below](#how-do-i-use-3d-agent-from-claude-code-cursor-codex-or-claude-desktop).
 
 ## What does 3D-Agent do in Blender?
 
@@ -103,6 +117,16 @@ Claude Desktop connects through a 3D-Agent extension (`.mcpb`) that **Set up** w
 > Use 3D-Agent to model a low-poly wooden crate in Blender, then tell me its dimensions.
 
 The connected app sees one tool, `3d_agent`, with one required field, `task`. Each task uses one prompt from your Ultra plan, the same as a message you type. Keep 3D-Agent open until the reply comes back. Full guide and troubleshooting: [3d-agent.com/docs/external-agents](https://3d-agent.com/docs/external-agents).
+
+### Limits
+
+- External agents need the **Ultra** plan. A first-month boost on another plan doesn't count.
+- The 3D-Agent app has to be open, signed in and connected to Blender.
+- 3D-Agent runs one task at a time. A second task sent while one is running is refused; send it again when the first has finished.
+- A call stays open until the task finishes, for up to 15 minutes.
+- Each task uses one of your plan's prompts. Tasks refused because you're not on Ultra don't use a prompt.
+
+Source: [External agents: limits](https://3d-agent.com/docs/external-agents).
 
 ## Example prompts
 
