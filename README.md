@@ -4,7 +4,7 @@
 
 This repository holds public documentation for 3D-Agent: ready-to-copy MCP configurations for using 3D-Agent from Claude Code, Cursor, Codex and Claude Desktop, and example prompts. It does not contain the 3D-Agent app's source code. The full documentation is at [3d-agent.com/docs](https://3d-agent.com/docs).
 
-_Updated: 2026-11-12_
+_Updated: 2026-11-14_
 
 ## Using Claude Code, Cursor or Codex with Blender through MCP
 
@@ -12,8 +12,8 @@ There are two ways to let an AI assistant work in Blender through the Model Cont
 
 | | A Blender MCP server | 3D-Agent's MCP server |
 | --- | --- | --- |
-| Examples | The open-source [Blender MCP](https://blendermcp.org) (`ahujasid/blender-mcp`), the Blender Lab MCP Server, Claude's Blender connector | 3D-Agent (documented in this repository) |
-| What the assistant gets | Low-level Blender commands. The assistant writes and runs the Blender Python itself | One tool, `3d_agent`, that hands a whole task to 3D-Agent |
+| Examples | Blender's official [Blender Lab MCP Server](https://www.blender.org/lab/mcp-server/), which Claude's Blender connector also uses | 3D-Agent (documented in this repository) |
+| What the assistant gets | Tools to inspect the scene, take screenshots and run Blender Python. The assistant writes the Python itself | One tool, `3d_agent`, that hands a whole task to 3D-Agent |
 | Who does the 3D work | Your assistant and its model | 3D-Agent's own agent, with its own tools, checkpoints and step limits |
 | Cost | The server is free; you bring the assistant and its model | Paid: needs the 3D-Agent Ultra plan, and each task uses one prompt |
 | Setup | Install the server and a Blender add-on, then configure your client | Turn on **Allow connections** in the 3D-Agent app and click **Set up** |
